@@ -319,15 +319,9 @@
     padding:4rem 1.5rem;
   }
   .video-modal.open{display:flex;}
-  .video-frames-wrap{
-    width:100%;max-width:1200px;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:1.5rem;
-  }
   .video-frame-wrap{
     position:relative;
-    width:100%;
+    width:100%;max-width:1200px;
     aspect-ratio:16/9;
     box-shadow:0 30px 90px rgba(0,0,0,.6);
   }
@@ -335,9 +329,6 @@
     position:absolute;inset:0;
     width:100%;height:100%;
     border:0;
-  }
-  @media (max-width:860px){
-    .video-frames-wrap{grid-template-columns:1fr;}
   }
   .video-close{
     position:fixed;top:1.6rem;right:1.8rem;
@@ -386,17 +377,10 @@
 
 <div class="video-modal" id="videoModal">
   <button type="button" class="video-close" id="videoClose" aria-label="Close video">&times;</button>
-  <div class="video-frames-wrap">
-    <div class="video-frame-wrap">
-      <iframe id="videoFrame1" src="" title="The 80's Revue Sizzle Reel 1" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
-    <div class="video-frame-wrap">
-      <iframe id="videoFrame2" src="" title="The 80's Revue Sizzle Reel 2" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-    </div>
+  <div class="video-frame-wrap">
+    <iframe id="videoFrame" src="" title="The 80's Revue Sizzle Reel" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen></iframe>
   </div>
 </div>
 
@@ -504,22 +488,17 @@
 
   // Video modal
   const videoModal = document.getElementById('videoModal');
-  const videoFrame1 = document.getElementById('videoFrame1');
-  const videoFrame2 = document.getElementById('videoFrame2');
-  const YT_ID_1 = 'mo581hHw-5k';
-  const YT_ID_2 = 'Z3SlXSAt0-8';
+  const videoFrame = document.getElementById('videoFrame');
+  const YT_ID = 'YqimPm3edEk';
 
   function openVideo(){
-    // Only the first reel autoplays, to avoid two audio tracks playing at once.
-    videoFrame1.src = 'https://www.youtube.com/embed/' + YT_ID_1 + '?autoplay=1&rel=0';
-    videoFrame2.src = 'https://www.youtube.com/embed/' + YT_ID_2 + '?rel=0';
+    videoFrame.src = 'https://www.youtube.com/embed/' + YT_ID + '?autoplay=1&rel=0';
     videoModal.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closeVideo(){
     videoModal.classList.remove('open');
-    videoFrame1.src = '';
-    videoFrame2.src = '';
+    videoFrame.src = '';
     document.body.style.overflow = '';
   }
 
@@ -531,4 +510,3 @@
 
 </body>
 </html>
-<!-- auto-deploy test Wed Aug 26 15:34:24 UTC 2026 -->
