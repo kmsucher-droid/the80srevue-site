@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The 80's Revue | Relive 80s Hits — Book Today</title>
+<meta name="description" content="Experience the high-energy 80's music revue featuring top hits performed with authentic 80s style and Vegas polish. Perfect for theaters, festivals, and corporate events.">
+<link rel="icon" href="80s-revue-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#060606;
+    --bg-alt:#0f0f12;
+    --cream:#f3efe6;
+    --muted:#96908a;
+    --gold:#ff3fc7;
+    --gold-bright:#ff7fe0;
+    --cyan:#33e6ff;
+    --lime:#d6ff5c;
+    --pink:#ff3fc7;
+    --line:rgba(255,63,199,0.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--gold);color:#060606;}
+  img{max-width:100%;display:block;}
+
+  .display{
+    font-family:'Bebas Neue',sans-serif;
+    letter-spacing:.06em;
+    line-height:1;
+  }
+  .serif-italic{font-family:'Playfair Display',serif;font-style:italic;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    font-size:.7rem;
+    color:var(--gold);
+  }
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:1.6rem 6%;
+    background:rgba(6,6,6,.75);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease;
+  }
+  .logo-word{
+    font-family:'Bebas Neue',sans-serif;
+    font-size:1.3rem;
+    letter-spacing:.18em;
+    color:var(--cream);
+  }
+  .navlinks{display:flex;gap:2.6rem;}
+  .navlinks a{
+    font-size:.72rem;
+    font-weight:500;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+    position:relative;
+    padding-bottom:5px;
+    transition:color .25s ease;
+  }
+  .navlinks a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:1px;
+    background:var(--gold);
+    transition:width .3s ease;
+  }
+  .navlinks a:hover{color:var(--cream);}
+  .navlinks a:hover::after{width:100%;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:8rem 6% 5rem;
+    background:
+      radial-gradient(ellipse 60% 45% at 50% 38%, rgba(255,63,199,0.10), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 50% 100%, rgba(255,63,199,0.06), transparent 70%),
+      var(--bg);
+    overflow:hidden;
+  }
+  .sparkle{position:absolute;inset:0;z-index:0;pointer-events:none;}
+  .sparkle span{
+    position:absolute;border-radius:50%;
+    background:var(--cream);
+    opacity:.5;
+    animation:twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle{0%,100%{opacity:.15;transform:scale(.7);}50%{opacity:.9;transform:scale(1);}}
+
+  .hero-logo{
+    position:relative;z-index:2;
+    width:min(70vw,440px);
+    filter:drop-shadow(0 20px 60px rgba(0,0,0,.6));
+    margin-bottom:2.2rem;
+  }
+  .hero .tagline{
+    position:relative;z-index:2;
+    font-size:clamp(1.1rem,2.2vw,1.5rem);
+    color:var(--cream);
+    max-width:600px;
+    opacity:.9;
+  }
+  .hero .rule{
+    width:56px;height:1px;background:var(--gold);
+    margin:1.8rem auto;
+    position:relative;z-index:2;
+  }
+  .cta-row{
+    position:relative;z-index:2;
+    margin-top:.6rem;
+    display:flex;gap:1.1rem;justify-content:center;flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:.95rem 2.4rem;
+    font-family:'Inter',sans-serif;
+    font-weight:600;
+    letter-spacing:.14em;
+    font-size:.74rem;
+    text-transform:uppercase;
+    border-radius:2px;
+    border:1px solid var(--gold);
+    color:#060606;
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));
+    transition:transform .25s ease, box-shadow .25s ease, opacity .25s ease;
+  }
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,63,199,.35);}
+  .btn.outline{
+    background:transparent;
+    color:var(--cream);
+    border:1px solid rgba(243,239,230,.35);
+  }
+  .btn.outline:hover{border-color:var(--cream);}
+
+  .scroll-cue{
+    position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);
+    z-index:2;font-size:.62rem;letter-spacing:.3em;color:var(--muted);
+    text-transform:uppercase;
+    animation:bob 2.4s infinite;
+  }
+  @keyframes bob{0%,100%{transform:translate(-50%,0);}50%{transform:translate(-50%,6px);}}
+
+  /* ---------- SECTIONS GENERAL ---------- */
+  section{position:relative;padding:7rem 6%;}
+  .container{max-width:1100px;margin:0 auto;}
+  .section-head{text-align:center;max-width:640px;margin:0 auto 4rem;}
+  .section-head .eyebrow{display:block;margin-bottom:.9rem;}
+  .section-head h2{
+    font-size:clamp(2rem,4.4vw,3.2rem);
+    color:var(--cream);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .about-grid{
+    display:grid;
+    grid-template-columns:.85fr 1.15fr;
+    gap:4rem;
+    align-items:start;
+  }
+  .about-grid h3{
+    font-size:clamp(1.8rem,3.2vw,2.6rem);
+    color:var(--cream);
+    margin-top:.7rem;
+    line-height:1.15;
+  }
+  .about-copy p{
+    font-size:1rem;
+    line-height:1.9;
+    color:#d8d3ca;
+    margin-bottom:1.4rem;
+    font-weight:300;
+  }
+  .about-copy strong{color:var(--gold-bright);font-weight:600;}
+  .pull-quote{
+    margin-top:4.5rem;
+    padding-top:3.5rem;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .pull-quote p{
+    font-size:clamp(1.3rem,2.8vw,2rem);
+    line-height:1.5;
+    color:var(--cream);
+    max-width:820px;margin:0 auto;
+  }
+
+  /* ---------- MARQUEE ---------- */
+  .marquee-wrap{
+    background:var(--bg);
+    border-bottom:1px solid var(--line);
+    overflow:hidden;
+    padding:1.6rem 0;
+  }
+  .marquee{display:flex;width:max-content;gap:3rem;animation:scroll 26s linear infinite;}
+  .marquee span{
+    font-size:.85rem;
+    font-weight:500;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--muted);
+    white-space:nowrap;
+    display:flex;align-items:center;gap:3rem;
+  }
+  .marquee span i{color:var(--pink);font-style:normal;font-size:.6rem;}
+  @keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ---------- STATEMENT ---------- */
+  .statement{text-align:center;background:var(--bg);}
+  .statement .lines{display:flex;flex-direction:column;gap:1rem;max-width:680px;margin:0 auto;}
+  .statement p{
+    font-size:clamp(1.2rem,3.2vw,2.1rem);
+    line-height:1.4;
+    color:var(--cream);
+  }
+  .statement p:last-child{color:var(--gold-bright);}
+
+  /* ---------- SHOP ---------- */
+  .shop{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .shop-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:1.6rem;
+  }
+  .product{
+    background:#0a0a0d;
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+    transition:transform .3s ease, border-color .3s ease;
+  }
+  .product:hover{transform:translateY(-6px);border-color:var(--gold);}
+  .product .frame{
+    background:#f3efe6;
+    padding:1.2rem;
+  }
+  .product .frame img{width:100%;aspect-ratio:1/1;object-fit:contain;}
+  .product .info{padding:1.3rem 1.2rem 1.6rem;text-align:center;}
+  .product h3{
+    font-size:.78rem;
+    font-weight:500;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--cream);
+    margin-bottom:.6rem;
+  }
+  .product .price{
+    font-family:'Bebas Neue',sans-serif;
+    letter-spacing:.06em;
+    font-size:1.15rem;
+    color:var(--gold-bright);
+  }
+  .shop-cta{text-align:center;margin-top:3.2rem;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;background:var(--bg);}
+  .contact-card{
+    max-width:520px;margin:0 auto;
+    padding:3.2rem 2.5rem;
+    border:1px solid var(--line);
+    border-radius:4px;
+  }
+  .contact-card p{margin-bottom:.4rem;color:#c9c3ba;font-size:.95rem;}
+  .contact-card a.email{
+    display:inline-block;margin-top:1rem;
+    font-weight:600;color:var(--gold-bright);
+    border-bottom:1px solid var(--gold);
+    padding-bottom:2px;
+    letter-spacing:.02em;
+  }
+
+  footer{
+    text-align:center;
+    padding:2.6rem 1rem;
+    color:#615c56;
+    font-size:.75rem;
+    letter-spacing:.05em;
+    background:var(--bg);
+  }
+
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr;gap:2rem;}
+  }
+  @media (max-width:640px){
+    section{padding:5rem 6%;}
+    .navlinks{gap:1.2rem;}
+    .navlinks a{font-size:.62rem;}
+  }
+
+  /* ---------- VIDEO MODAL ---------- */
+  .video-modal{
+    position:fixed;inset:0;z-index:1000;
+    display:none;
+    align-items:center;justify-content:center;
+    background:rgba(4,4,5,.97);
+    padding:4rem 1.5rem;
+  }
+  .video-modal.open{display:flex;}
+  .video-frames-wrap{
+    width:100%;max-width:1200px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1.5rem;
+  }
+  .video-frame-wrap{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    box-shadow:0 30px 90px rgba(0,0,0,.6);
+  }
+  .video-frame-wrap iframe{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    border:0;
+  }
+  @media (max-width:860px){
+    .video-frames-wrap{grid-template-columns:1fr;}
+  }
+  .video-close{
+    position:fixed;top:1.6rem;right:1.8rem;
+    z-index:1001;
+    width:44px;height:44px;
+    border-radius:50%;
+    border:1px solid rgba(243,239,230,.35);
+    background:rgba(6,6,6,.6);
+    color:var(--cream);
+    font-size:1.7rem;
+    line-height:1;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    transition:border-color .25s ease, color .25s ease, transform .25s ease;
+  }
+  .video-close:hover{
+    border-color:var(--gold);
+    color:var(--gold-bright);
+    transform:rotate(90deg);
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-word">THE 80'S REVUE</div>
+  <div class="navlinks">
+    <a href="#about">About</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Book</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="sparkle" id="sparkle"></div>
+  <img class="hero-logo" src="80s-revue-logo.png" alt="The 80's Revue">
+  <p class="tagline serif-italic">Relive the decade that defined pop culture.</p>
+  <div class="rule"></div>
+  <div class="cta-row">
+    <a href="#contact" class="btn">Book The Show</a>
+    <button type="button" class="btn outline" id="watchTrailerBtn">Watch Sizzle</button>
+    <a href="#shop" class="btn outline">Shop Merch</a>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</section>
+
+<div class="video-modal" id="videoModal">
+  <button type="button" class="video-close" id="videoClose" aria-label="Close video">&times;</button>
+  <div class="video-frames-wrap">
+    <div class="video-frame-wrap">
+      <iframe id="videoFrame1" src="" title="The 80's Revue Sizzle Reel 1" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="video-frame-wrap">
+      <iframe id="videoFrame2" src="" title="The 80's Revue Sizzle Reel 2" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div>
+      <span class="eyebrow">A World-Class Production</span>
+      <h3 class="display">Vegas polish.<br>Grammy&trade; pedigree.</h3>
+    </div>
+    <div class="about-copy">
+      <p>From the creative force behind <strong>The Docksiders</strong> — voted Best of Las Vegas and a headliner at 1923 Live inside The Venetian Resort — comes <strong>The 80s Revue</strong>: a world-class production built to celebrate the decade that defined pop culture.</p>
+      <p>Created by three-time Grammy&trade;-nominated producer and entertainment executive <strong>Kevin Sucher</strong>, the show pairs an elite lineup of touring musicians and vocalists with the premium sound design, signature harmonies, and Vegas-level production value that have made Sucher's projects industry benchmarks.</p>
+      <p>Expect the biggest hits from Whitney Houston, Prince, Madonna, Michael Jackson, Gloria Estefan, Tears for Fears, Bon Jovi, and more — all delivered with the musicianship and showmanship audiences expect from a Kevin Sucher stage.</p>
+    </div>
+  </div>
+  <div class="pull-quote">
+    <p class="serif-italic">"The 80s Revue isn't just a concert — it's a full-scale experience."</p>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span><i>&#9670;</i>Whitney Houston<i>&#9670;</i>Prince<i>&#9670;</i>Madonna<i>&#9670;</i>Michael Jackson<i>&#9670;</i>Gloria Estefan<i>&#9670;</i>Tears for Fears<i>&#9670;</i>Bon Jovi</span>
+    <span><i>&#9670;</i>Whitney Houston<i>&#9670;</i>Prince<i>&#9670;</i>Madonna<i>&#9670;</i>Michael Jackson<i>&#9670;</i>Gloria Estefan<i>&#9670;</i>Tears for Fears<i>&#9670;</i>Bon Jovi</span>
+  </div>
+</div>
+
+<section class="statement">
+  <div class="lines serif-italic">
+    <p>A rewind.</p>
+    <p>A revival.</p>
+    <p>A celebration.</p>
+    <p>A tribute to the music that shaped a generation.</p>
+  </div>
+</section>
+
+<section class="shop" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Merch</span>
+      <h2 class="display">Shop</h2>
+    </div>
+    <div class="shop-grid">
+      <a class="product" href="https://www.the80srevue.com/shop/p/the-80s-revue-unisex-t-shirt" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://images.squarespace-cdn.com/content/v1/69276478c8fbe76ae177587f/1764198712741-WOGLKMGJQB6IMV3LMUP7/unisex-staple-t-shirt-black-front-6927892e5a3fa.jpg" alt="The 80's Revue Unisex t-shirt" loading="lazy"></div>
+        <div class="info">
+          <h3>Unisex T-Shirt</h3>
+          <div class="price">$30</div>
+        </div>
+      </a>
+      <a class="product" href="https://www.the80srevue.com/shop/p/the-80s-revue-unisex-short-sleeve-v-neck-t-shirt" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://images.squarespace-cdn.com/content/v1/69276478c8fbe76ae177587f/1765578614418-Y4OX1109NNQY7EOVN70B/unisex-v-neck-tee-white-front-693c976e53777.jpg" alt="The 80's Revue Unisex Short Sleeve V-Neck T-Shirt" loading="lazy"></div>
+        <div class="info">
+          <h3>V-Neck T-Shirt</h3>
+          <div class="price">$35</div>
+        </div>
+      </a>
+      <a class="product" href="https://www.the80srevue.com/shop/p/the-80s-revue-unisex-t-shirt-1" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://images.squarespace-cdn.com/content/v1/69276478c8fbe76ae177587f/1781039744840-ULJ3YUVZM4XNE986CPXE/unisex-staple-t-shirt-black-front-6a288275380d7.jpg" alt="The 80s Revue - Unisex t-shirt" loading="lazy"></div>
+        <div class="info">
+          <h3>Unisex T-Shirt (Alt)</h3>
+          <div class="price">$35</div>
+        </div>
+      </a>
+      <a class="product" href="https://www.the80srevue.com/shop/p/the-80s-revue-unisex-champion-hoodie" target="_blank" rel="noopener">
+        <div class="frame"><img src="https://images.squarespace-cdn.com/content/v1/69276478c8fbe76ae177587f/1781040061003-JQCS04IY7YFVCGAHBVI2/unisex-champion-powerblend-hoodie-black-front-6a2883aaa5371.jpg" alt="The 80s Revue - Unisex Champion hoodie" loading="lazy"></div>
+        <div class="info">
+          <h3>Champion Hoodie</h3>
+          <div class="price">$60</div>
+        </div>
+      </a>
+    </div>
+    <div class="shop-cta">
+      <a href="https://www.the80srevue.com/shop" class="btn outline" target="_blank" rel="noopener" style="color:var(--cream);">View Full Shop</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-head" style="margin-bottom:2.5rem;">
+    <span class="eyebrow">Booking</span>
+    <h2 class="display">Book The Show</h2>
+  </div>
+  <div class="contact-card">
+    <p>For theaters, festivals, and corporate events.</p>
+    <p>Booking Contact — Craig Newman</p>
+    <a class="email" href="mailto:craig@paladinartists.com">craig@paladinartists.com</a>
+  </div>
+</section>
+
+<footer>&copy; 2026 Sucher Entertainment, LLC</footer>
+
+<script>
+  const field = document.getElementById('sparkle');
+  for(let i=0;i<28;i++){
+    const s = document.createElement('span');
+    const size = (Math.random()*2+1).toFixed(1);
+    s.style.width = size+'px';
+    s.style.height = size+'px';
+    s.style.left = Math.random()*100+'%';
+    s.style.top = Math.random()*100+'%';
+    s.style.animationDelay = (Math.random()*4).toFixed(2)+'s';
+    field.appendChild(s);
+  }
+
+  // Video modal
+  const videoModal = document.getElementById('videoModal');
+  const videoFrame1 = document.getElementById('videoFrame1');
+  const videoFrame2 = document.getElementById('videoFrame2');
+  const YT_ID_1 = 'mo581hHw-5k';
+  const YT_ID_2 = 'Z3SlXSAt0-8';
+
+  function openVideo(){
+    // Only the first reel autoplays, to avoid two audio tracks playing at once.
+    videoFrame1.src = 'https://www.youtube.com/embed/' + YT_ID_1 + '?autoplay=1&rel=0';
+    videoFrame2.src = 'https://www.youtube.com/embed/' + YT_ID_2 + '?rel=0';
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideo(){
+    videoModal.classList.remove('open');
+    videoFrame1.src = '';
+    videoFrame2.src = '';
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('watchTrailerBtn').addEventListener('click', openVideo);
+  document.getElementById('videoClose').addEventListener('click', closeVideo);
+  videoModal.addEventListener('click', (e) => { if(e.target === videoModal) closeVideo(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeVideo(); });
+</script>
+
+</body>
+</html>
