@@ -238,6 +238,57 @@
   }
   .statement p:last-child{color:var(--gold-bright);}
 
+  /* ---------- SHOWS ---------- */
+  .shows{background:var(--bg);}
+  .shows-sub{
+    text-align:center;color:#c9c3ba;
+    margin:-2.6rem auto 3rem;max-width:560px;
+    font-size:.95rem;
+  }
+  .shows-list{
+    display:flex;flex-direction:column;gap:1rem;
+    max-width:820px;margin:0 auto;
+  }
+  .show-row{
+    display:grid;
+    grid-template-columns:64px 1fr auto auto;
+    align-items:center;
+    gap:1.4rem;
+    padding:1.2rem 1.4rem;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:#0a0a0d;
+    transition:border-color .3s ease, transform .3s ease;
+  }
+  .show-row:hover{border-color:var(--gold);transform:translateY(-2px);}
+  .show-date{
+    text-align:center;
+    font-family:'Bebas Neue',sans-serif;
+    color:var(--gold-bright);
+    line-height:1;
+  }
+  .show-date .day{display:block;font-size:1.9rem;}
+  .show-date .mon{display:block;font-size:.72rem;letter-spacing:.15em;color:var(--muted);margin-top:.3rem;}
+  .show-info h3{font-size:.92rem;font-weight:500;color:var(--cream);letter-spacing:.01em;}
+  .show-info p{font-size:.78rem;color:var(--muted);margin-top:.3rem;}
+  .show-tag{
+    font-size:.6rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gold);
+    border:1px solid var(--line);
+    padding:.35rem .7rem;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .show-btn{padding:.6rem 1.3rem;font-size:.66rem;white-space:nowrap;}
+  .shows-cta{text-align:center;margin-top:3rem;}
+  @media (max-width:640px){
+    .show-row{grid-template-columns:52px 1fr;row-gap:.7rem;}
+    .show-tag{grid-column:2;justify-self:start;}
+    .show-btn{grid-column:1/-1;width:100%;text-align:center;}
+  }
+
   /* ---------- SHOP ---------- */
   .shop{background:var(--bg-alt);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
   .shop-grid{
@@ -357,6 +408,7 @@
   <div class="logo-word">THE 80'S REVUE</div>
   <div class="navlinks">
     <a href="#about">About</a>
+    <a href="#shows">Shows</a>
     <a href="#shop">Shop</a>
     <a href="#contact">Book</a>
   </div>
@@ -407,6 +459,93 @@
     <span><i>&#9670;</i>Whitney Houston<i>&#9670;</i>Prince<i>&#9670;</i>Madonna<i>&#9670;</i>Michael Jackson<i>&#9670;</i>Gloria Estefan<i>&#9670;</i>Tears for Fears<i>&#9670;</i>Bon Jovi</span>
   </div>
 </div>
+
+<section class="shows" id="shows">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Don't Miss It</span>
+      <h2 class="display">Upcoming Shows</h2>
+    </div>
+    <p class="shows-sub">Catch The 80's Revue live at 1923 Live / The Venetian Resort, Las Vegas.</p>
+    <div class="shows-list">
+      <div class="show-row">
+        <div class="show-date"><span class="day">12</span><span class="mon">SEP</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">13</span><span class="mon">SEP</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">18</span><span class="mon">SEP</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">19</span><span class="mon">SEP</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">20</span><span class="mon">SEP</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">27</span><span class="mon">SEP</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">4</span><span class="mon">OCT</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">11</span><span class="mon">OCT</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">16</span><span class="mon">OCT</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">17</span><span class="mon">OCT</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">18</span><span class="mon">OCT</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+      <div class="show-row">
+        <div class="show-date"><span class="day">25</span><span class="mon">OCT</span></div>
+        <div class="show-info"><h3>1923 Live / The Venetian</h3><p>Las Vegas, NV &middot; 7:15pm</p></div>
+        <span class="show-tag">Residency</span>
+        <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline show-btn" target="_blank" rel="noopener">Buy Tickets</a>
+      </div>
+    </div>
+    <div class="shows-cta">
+      <a href="https://www.1923lv.com/entertainment-venetian/80s-revue/" class="btn outline" target="_blank" rel="noopener">View Full Schedule</a>
+    </div>
+  </div>
+</section>
 
 <section class="statement">
   <div class="lines serif-italic">
